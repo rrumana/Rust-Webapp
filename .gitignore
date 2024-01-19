@@ -1,0 +1,8 @@
+#launch.json folder
+.vscode/
+
+#cargo target folder
+target/
+
+#cargo lock file
+Cargo.lock
