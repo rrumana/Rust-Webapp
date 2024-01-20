@@ -35,9 +35,9 @@ fn handle_connection(mut stream: TcpStream) -> std::io::Result<()> {
 
     let (status_line, filename) = 
         if buffer.starts_with(get) {
-            ("HTTP/1.1 200 OK", "index.html")
+            ("HTTP/1.1 200 OK", "html/index.html")
         } else {
-            ("HTTP/1.1 404 NOT FOUND", "404.html")
+            ("HTTP/1.1 404 NOT FOUND", "html/404.html")
         };
 
     let contents = fs::read_to_string(filename)?;
