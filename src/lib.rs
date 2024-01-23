@@ -15,7 +15,7 @@ enum Message {
 impl ThreadPool {
     /// Create a new ThreadPool.
     /// 
-    /// The size is the nnumber of threads in the pool.
+    /// The size is the number of threads in the pool.
     /// 
     /// # Panics
     /// 
