@@ -1,3 +1,4 @@
+use log::{error, debug};
 use std::{thread, sync::{mpsc::{self}, Arc, Mutex}};
 
 pub struct ThreadPool {
@@ -43,22 +44,28 @@ impl ThreadPool {
         F: FnOnce() + Send + 'static
         {
             let job = Box::new(f);
-            self.sender.send(Message::NewJob(job)).expect("Workers stopped running unexpectedly");
+            match self.sender.send(Message::NewJob(job)) {
+                Ok(msg) => msg,
+                Err(e) => {
+                    error!("Workers stopped running unexpectedly: {}, SHUTTING DOWN.", e); 
+                    std::process::exit(1)
+                }
+            };
         }
 }
 
 impl Drop for ThreadPool {
     fn drop(&mut self) {
-        println!("Sending terminate message to all workers.");
+        debug!("Sending terminate message to all workers.");
 
         for _ in &self.workers {
             self.sender.send(Message::Terminate).unwrap();
         }
 
-        println!("Shutting down all workers.");
+        debug!("Shutting down all workers.");
 
         for worker in &mut self.workers {
-            println!("Shutting down worker {}", worker.id);
+            debug!("Shutting down worker {}", worker.id);
 
             if let Some(thread) = worker.thread.take() {
                 thread.join().unwrap();
@@ -83,11 +90,11 @@ impl Worker {
 
             match message {
                 Message::NewJob(job) => {
-                    println!("Worker {} got a job; executing.", id);
+                    debug!("Worker {} got a job; executing.", id);
                     job();
                 }
                 Message::Terminate => {
-                    println!("Worker {} was told to terminate.", id);
+                    debug!("Worker {} was told to terminate.", id);
                     break;
                 }
             }
