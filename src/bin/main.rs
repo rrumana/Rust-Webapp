@@ -1,3 +1,10 @@
+use log::error;
+use log::info;
+use log::warn;
+use log::{debug, LevelFilter};
+use log4rs::append::console::ConsoleAppender;
+use log4rs::config::{Appender, Root};
+use log4rs::Config;
 use std::fs;
 use std::net::TcpListener;
 use std::net::TcpStream;
@@ -8,8 +15,11 @@ use std::time::Duration;
 extern crate webapp;
 use webapp::ThreadPool;
 
-fn main() -> std::io::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:7878")?;
+fn main() {
+    let listener = match TcpListener::bind("127.0.0.1:7878"){
+        Ok(listener) => { listener },
+        Err(e) => eprintln!("{}", e)
+    };
 
     let pool = ThreadPool::new(4);
 
@@ -20,13 +30,10 @@ fn main() -> std::io::Result<()> {
                     handle_connection(stream);
                 });
             }
-            Err(e) => {
-                eprintln!("{}", e); 
-                std::process::exit(1)
-            },
+            Err(err) if is_fatal(&err) => return Err(err),
+            Err(err) => log::error!("failed to accept: {}", err)
         }
     }
-    Ok(())
 }
 
 fn handle_connection(mut stream: TcpStream) {
