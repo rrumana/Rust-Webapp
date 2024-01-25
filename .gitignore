@@ -6,3 +6,6 @@ target/
 
 #cargo lock file
 Cargo.lock
+
+#css lock file
+css/

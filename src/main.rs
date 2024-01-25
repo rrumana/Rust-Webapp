@@ -36,32 +36,33 @@ fn main() {
 
     let pool = ThreadPool::new(4);
 
-    for stream in listener.incoming().take(4) {
+    for stream in listener.incoming().take(10) {
         match stream {
             Ok(stream) => {
-                pool.execute(|| {
-                    debug!("Now handling TcpStream client: {}", stream.peer_addr().unwrap());
-                    handle_connection(stream);
+                let client = stream.peer_addr().unwrap();
+                pool.execute(move || {
+                    debug!("Now handling TcpStream client: {}", &client);
+                    match handle_connection(stream) {
+                        Ok(_) => (),
+                        Err(e) => {
+                            error!("TcpStream for client {} failed: {}, SHUTTING DOWN.", &client, e); 
+                            std::process::exit(1)
+                        },
+                    };
                 });
             }
             Err(e) => { 
-                error!("{}, SHUTTING DOWN.", e); 
+                error!("{}, SHUTTING DOWN.", e);
                 std::process::exit(1)
             }
         }
     }
 }
 
-fn handle_connection(mut stream: TcpStream) {
+fn handle_connection(mut stream: TcpStream) -> std::io::Result<()> {
     let mut buffer = [0; 1024];
 
-    match stream.read(&mut buffer) {
-        Ok(_) => (),
-        Err(e) => {
-            error!("{}, SHUTTING DOWN.", e); 
-            std::process::exit(1)
-        },
-    };
+    let _ = stream.read(&mut buffer)?;
 
     let get = b"GET / HTTP/1.1\r\n";
     let sleep = b"GET /sleep HTTP/1.1\r\n";
@@ -76,13 +77,7 @@ fn handle_connection(mut stream: TcpStream) {
             ("HTTP/1.1 404 NOT FOUND", "html/404.html")
         };
 
-    let contents = match fs::read_to_string(filename) {
-        Ok(str) => str,
-        Err(e) => {
-            error!("Failed to read query contents to string: {}, SHUTTING DOWN.", e); 
-            std::process::exit(1)
-        },
-    };
+    let contents = fs::read_to_string(filename)?;
 
     let response = format!{
         "{}\r\nContent-Length: {}\r\n\r\n{}",
@@ -91,20 +86,8 @@ fn handle_connection(mut stream: TcpStream) {
         contents
     };
     
+    stream.write_all(response.as_bytes())?;
+    stream.flush()?;
 
-    match stream.write_all(response.as_bytes()) {
-        Ok(_) => (),
-        Err(e) => {
-            error!("Couldn't write contents of buffer: {}, SHUTTING DOWN.", e); 
-            std::process::exit(1)
-        },
-    };
-
-    match stream.flush() {
-        Ok(_) => (),
-        Err(e) => {
-            error!("Couldn't flush contents of buffer: {}, SHUTTING DOWN.", e); 
-            std::process::exit(1)
-        },
-    };
+    Ok(())
 }

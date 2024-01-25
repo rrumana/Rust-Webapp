@@ -1,19 +1,57 @@
-2024-01-24T11:39:24.187024500-08:00 DEBUG webapp - Successfully bound to port: 127.0.0.1:7878.
-2024-01-24T11:39:30.453323500-08:00 DEBUG webapp - Worker 0 got a job; executing.
-2024-01-24T11:39:30.453412900-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63545
-2024-01-24T11:39:32.223374100-08:00 DEBUG webapp - Worker 1 got a job; executing.
-2024-01-24T11:39:32.223455-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63546
-2024-01-24T11:39:34.628145900-08:00 DEBUG webapp - Worker 2 got a job; executing.
-2024-01-24T11:39:34.628212300-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63549
-2024-01-24T11:39:39.307121500-08:00 DEBUG webapp - Sending terminate message to all workers.
-2024-01-24T11:39:39.307196200-08:00 DEBUG webapp - Shutting down all workers.
-2024-01-24T11:39:39.307206300-08:00 DEBUG webapp - Shutting down worker 0
-2024-01-24T11:39:39.307216600-08:00 DEBUG webapp - Worker 2 was told to terminate.
-2024-01-24T11:39:39.307251500-08:00 DEBUG webapp - Worker 0 was told to terminate.
-2024-01-24T11:39:39.307280300-08:00 DEBUG webapp - Worker 1 was told to terminate.
-2024-01-24T11:39:39.307303400-08:00 DEBUG webapp - Worker 3 got a job; executing.
-2024-01-24T11:39:39.307400400-08:00 DEBUG webapp - Shutting down worker 1
-2024-01-24T11:39:39.307428-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63550
-2024-01-24T11:39:39.307450-08:00 DEBUG webapp - Shutting down worker 2
-2024-01-24T11:39:39.307471800-08:00 DEBUG webapp - Shutting down worker 3
-2024-01-24T11:39:44.307776800-08:00 DEBUG webapp - Worker 3 was told to terminate.
+2024-01-24T11:55:28.773269300-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-24T11:55:28.773347700-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63861
+2024-01-24T11:55:28.786896200-08:00 DEBUG webapp - Worker 2 got a job; executing.
+2024-01-24T11:55:28.786941-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63862
+2024-01-24T11:55:28.787617300-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T11:55:28.787679200-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63863
+2024-01-24T11:55:28.787748200-08:00 DEBUG webapp - Worker 3 got a job; executing.
+2024-01-24T11:55:28.787769900-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63864
+2024-01-24T11:55:41.979690900-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-24T11:55:41.979729-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63865
+2024-01-24T11:55:41.994617600-08:00 DEBUG webapp - Worker 2 got a job; executing.
+2024-01-24T11:55:41.994658800-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63866
+2024-01-24T11:55:41.995064700-08:00 DEBUG webapp - Worker 3 got a job; executing.
+2024-01-24T11:55:41.995095400-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63867
+2024-01-24T11:55:41.995603100-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T11:55:41.995635800-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:63868
+2024-01-24T12:01:40.025208800-08:00 DEBUG webapp - Successfully bound to port: 127.0.0.1:7878.
+2024-01-24T12:01:44.076911800-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T12:01:44.076964300-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64002
+2024-01-24T12:01:44.091328300-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-24T12:01:44.091377800-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64003
+2024-01-24T12:01:44.091509300-08:00 DEBUG webapp - Worker 2 got a job; executing.
+2024-01-24T12:01:44.091546600-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64004
+2024-01-24T12:01:44.094568-08:00 DEBUG webapp - Worker 3 got a job; executing.
+2024-01-24T12:01:44.094649400-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64006
+2024-01-24T12:01:44.095453900-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T12:01:44.095484200-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64007
+2024-01-24T12:01:44.095739900-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-24T12:01:44.095774400-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64008
+2024-01-24T12:01:44.096397300-08:00 DEBUG webapp - Worker 2 got a job; executing.
+2024-01-24T12:01:44.096421300-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64009
+2024-01-24T12:01:44.096702900-08:00 DEBUG webapp - Worker 3 got a job; executing.
+2024-01-24T12:01:44.096727200-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64010
+2024-01-24T12:01:44.097482700-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T12:01:44.097502600-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64011
+2024-01-24T12:03:10.687438800-08:00 DEBUG webapp - Successfully bound to port: 127.0.0.1:7878.
+2024-01-24T12:03:15.281570400-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T12:03:15.281651700-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64069
+2024-01-24T12:03:15.294786300-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-24T12:03:15.294834800-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64070
+2024-01-24T12:05:03.850413100-08:00 DEBUG webapp - Worker 2 got a job; executing.
+2024-01-24T12:05:03.850489900-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64104
+2024-01-24T12:05:03.868786800-08:00 DEBUG webapp - Worker 3 got a job; executing.
+2024-01-24T12:05:03.868869800-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64105
+2024-01-24T12:19:16.813128200-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-24T12:19:16.813185300-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64307
+2024-01-24T12:19:16.828930800-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-24T12:19:16.828974800-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64308
+2024-01-24T12:19:24.126927400-08:00 DEBUG webapp - Worker 2 got a job; executing.
+2024-01-24T12:19:24.126965200-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64312
+2024-01-24T12:19:24.140473700-08:00 DEBUG webapp - Worker 3 got a job; executing.
+2024-01-24T12:19:24.140522300-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:64313
+2024-01-25T06:18:45.479678900-08:00 DEBUG webapp - Successfully bound to port: 127.0.0.1:7878.
+2024-01-25T06:18:48.808014100-08:00 DEBUG webapp - Worker 0 got a job; executing.
+2024-01-25T06:18:48.808063100-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:51155
+2024-01-25T06:18:48.840419800-08:00 DEBUG webapp - Worker 1 got a job; executing.
+2024-01-25T06:18:48.840507700-08:00 DEBUG webapp - Now handling TcpStream client: 127.0.0.1:51156
