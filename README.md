@@ -4,4 +4,6 @@ This is an implementation of the a Rust webserver as shown in the Rust book fina
 
 This is going to be a starting off point and a template for further exploration into webapp coding.
 
-I am planning on hosting my own portfolio website which is running on rust, even if the frontend is using a more modern software stack.
+The current plan is to revisit this proect down the road to build upon this knowlege and build a good front end.
+
+I may try to make a portfolio website in the event that I learn enough Javascript and whatnot, but that currently isn't in the cards as I am enjoying writing other projects in Rust.
